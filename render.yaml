@@ -13,6 +13,8 @@ services:
         value: "5678"
       - key: N8N_PORT
         value: "5678"
+      - key: N8N_LISTEN_ADDRESS
+        value: "0.0.0.0"
       - key: WEBHOOK_URL
         value: https://padua.onrender.com
       - key: N8N_HOST
@@ -26,7 +28,7 @@ services:
       - key: N8N_BASIC_AUTH_USER
         value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
-        sync: false
+        generateValue: true
       - key: DB_SQLITE_POOL_SIZE
         value: "2"
       - key: N8N_RUNNERS_ENABLED
@@ -35,3 +37,5 @@ services:
         value: "false"
       - key: N8N_GIT_NODE_DISABLE_BARE_REPOS
         value: "true"
+      - key: N8N_USER_FOLDER
+        value: /data
