@@ -11,14 +11,15 @@ RUN mkdir -p /data/.n8n && chmod -R 777 /data
 # even if Render Blueprint sync fails or is not used.
 ENV N8N_PORT=5678
 ENV N8N_LISTEN_ADDRESS=0.0.0.0
-ENV WEBHOOK_URL=https://padua.onrender.com/
-ENV N8N_EDITOR_BASE_URL=https://padua.onrender.com/
+ENV WEBHOOK_URL=https://padua.onrender.com
+ENV N8N_EDITOR_BASE_URL=https://padua.onrender.com
 ENV N8N_PROTOCOL=https
 ENV N8N_HOST=padua.onrender.com
 
 ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=admin
 ENV N8N_EXPRESS_TRUST_PROXY=true
+ENV N8N_RUNNERS_ENABLED=false
 # Note: Password should ideally be a secret, but properly set in Render dashboard. 
 # We leave a default here or rely on Render env var.
 
