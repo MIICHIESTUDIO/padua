@@ -9,7 +9,7 @@ ENV N8N_BASIC_AUTH_ACTIVE=true
 ENV N8N_BASIC_AUTH_USER=admin
 ENV N8N_BASIC_AUTH_PASSWORD=password
 ENV N8N_PORT=5678
-ENV WEBHOOK_URL=https://padua.onrender.com
+ENV WEBHOOK_URL=https://padua.onrender.com/
 ENV N8N_EDITOR_BASE_URL=https://padua.onrender.com
 ENV N8N_PROTOCOL=https
 ENV N8N_HOST=padua.onrender.com
@@ -22,10 +22,5 @@ WORKDIR /home/node
 USER node
 EXPOSE 5678
 
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-USER root
-RUN chmod +x /docker-entrypoint.sh
-
-USER node
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["n8n", "start"]
+ENTRYPOINT ["tini", "--", "n8n"]
+CMD ["start"]
