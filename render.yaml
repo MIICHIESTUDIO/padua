@@ -32,7 +32,7 @@ services:
       - key: DB_SQLITE_POOL_SIZE
         value: "2"
       - key: N8N_RUNNERS_ENABLED
-        value: "true"
+        value: "false"
       - key: N8N_BLOCK_ENV_ACCESS_IN_NODE
         value: "false"
       - key: N8N_GIT_NODE_DISABLE_BARE_REPOS
