@@ -22,5 +22,10 @@ WORKDIR /home/node
 USER node
 EXPOSE 5678
 
-ENTRYPOINT ["tini", "--", "n8n"]
-CMD ["start"]
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+USER root
+RUN chmod +x /docker-entrypoint.sh
+
+USER node
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["n8n", "start"]
