@@ -14,7 +14,7 @@ services:
       - key: N8N_PORT
         value: "5678"
       - key: WEBHOOK_URL
-        value: https://padua.onrender.com/
+        value: https://padua.onrender.com
       - key: N8N_HOST
         value: padua.onrender.com
       - key: N8N_PROTOCOL
