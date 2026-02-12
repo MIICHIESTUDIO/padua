@@ -14,6 +14,7 @@ WORKDIR /home/node
 EXPOSE 5678
 
 # Entrypoint is already defined in the base image, but we can be explicit if needed.
-# The base image CMD is "start"
-ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
-CMD ["n8n"]
+# We bypass the default entrypoint script to prevent it from switching back to the 'node' user,
+# ensuring we run as root to avoid permission issues.
+ENTRYPOINT ["tini", "--", "n8n"]
+CMD ["start"]
